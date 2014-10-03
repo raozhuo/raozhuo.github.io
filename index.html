@@ -64,7 +64,55 @@
 </script>
 <!-- 评论系统 -->
 
+<!-- wechat -->
+<script type="text/javascript">
+    var imgUrl = "http://raozhuo.github.io/img/data/rz.jpg";
+    var lineLink = "http://raozhuo.github.io";
+    var descContent = "饶是铁肩担道义亦天妒英才归去，卓然无悔心系公却魂归自由来兮";
+    var shareTitle = "饶卓纪念堂";
+    var appid = "";
 
+    function shareFriend() {
+        WeixinJSBridge.invoke("sendAppMessage", {
+            "appid": appid,
+            "img_url": imgUrl,
+            "img_width": "300",
+            "img_height": "300",
+            "link": lineLink,
+            "desc": descContent,
+            "title": shareTitle
+        }, function(res) {})
+    }
+
+    function shareTimeline() {
+        WeixinJSBridge.invoke("shareTimeline", {
+            "img_url": imgUrl,
+            "img_width": "300",
+            "img_height": "300",
+            "link": lineLink,
+            "desc": descContent,
+            "title": shareTitle
+        }, function(res) {})
+    }
+
+    function shareWeibo() {
+        WeixinJSBridge.invoke("shareWeibo", {
+            "content": descContent,
+            "url": lineLink,
+        }, function(res) {})
+    }
+    document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+        WeixinJSBridge.on("menu:share:appmessage", function(argv) {
+            shareFriend()
+        });
+        WeixinJSBridge.on("menu:share:timeline", function(argv) {
+            shareTimeline()
+        });
+        WeixinJSBridge.on("menu:share:weibo", function(argv) {
+            shareWeibo()
+        })
+    }, false);
+</script>
 
 
 </body>

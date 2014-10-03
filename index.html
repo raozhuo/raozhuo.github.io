@@ -2,25 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>饶卓纪念堂</title>
 </head>
 <body>
-  <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="" data-title="永远的饶卓" data-url="http://raozhuo.github.io/"></div>
-  <!-- 多说评论框 end -->
-  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript">
-  var duoshuoQuery = {short_name:"raozhuo"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0] 
-       || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-  <!-- 多说公共JS代码 end -->
+
+<!-- div标签放在页面需要展示的位置  -->
+<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
+<!-- 如果页面已有畅言的评论框，以下代码放在评论框代码的后面，来读取评论框的配置，否则需在div标签或代码中配置sid、cid(分类id) -->
+<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+<!-- 如需修改默认配置，请到changyan.sohu.com后台进行配置 -->
+<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cyrpbeO3D"></script>
+            
+
+<!-- 评论系统 -->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+     function browserRedirect() {
+     var sUserAgent = navigator.userAgent.toLowerCase();
+     var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+     var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+     var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+     var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+     var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+     var bIsAndroid = sUserAgent.match(/android/i) == "android";
+     var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+     var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+     if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+         (function() {
+             var expire_time = parseInt((new Date()).getTime() / (5 * 60 * 1000));
+             var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
+             var script_version = document.createElement("script"),
+                 script_cyan = document.createElement("script");
+             script_version.type = script_cyan.type = "text/javascript";
+             script_version.charset = script_cyan.charset = "utf-8";
+             script_version.onload = function() {
+                 script_cyan.id = 'changyan_mobile_js';
+                 script_cyan.src = 'http://changyan.itc.cn/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrpbeO3D&' + 'conf=prod_ba9c1897d25ec5d2ecb3915e9556b02d&version=' + cyan_resource_version;
+                 head.insertBefore(script_cyan, head.firstChild);
+             };
+             script_version.src = 'http://changyan.sohu.com/upload/mobile/wap-js/version.js?_=' + expire_time;
+             head.insertBefore(script_version, head.firstChild);
+         })();
+     } else {
+         (function() {
+             var appid = 'cyrpbeO3D',
+                 conf = 'prod_ba9c1897d25ec5d2ecb3915e9556b02d';
+             var doc = document,
+                 s = doc.createElement('script'),
+                 h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+             s.type = 'text/javascript';
+             s.charset = 'utf-8';
+             s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+             h.insertBefore(s, h.firstChild);
+             window.SCS_NO_IFRAME = true;
+         })()
+     }
+ }
+
+ browserRedirect();
+</script>
+<!-- 评论系统 -->
+
+
+
 
 </body>
 </html>

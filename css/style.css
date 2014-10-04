@@ -100,3 +100,5 @@ input, select {
 .banner{text-align: center;}
 .banner img{width: 100%; height: 100%;}
 .layout{padding: 0 1%;}
+.btn{text-align: center; margin: 2% 0;}
+.btn a{background: #d1cfbf; display: inline-block; text-decoration: none; padding: 5px 30px; color: #fff; border-radius: 3px;}
